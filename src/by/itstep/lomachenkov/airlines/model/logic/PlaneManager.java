@@ -42,37 +42,43 @@ public class PlaneManager {
         return totalMissilesAmount;
     }
 
-    public static double getMaxCruiseSpeed(List<Aviation> planes) {
+    public static Aviation findMaxCruiseSpeedPlane(List<Aviation> planes) {
         double maxCruiseSpeed = 0;
+        int index = 0;
 
         for (Aviation plane : planes) {
-            maxCruiseSpeed = plane.getCruiseSpeed() > maxCruiseSpeed ?
-                    plane.getCruiseSpeed() : maxCruiseSpeed;
+            if (plane.getCruiseSpeed() > maxCruiseSpeed) {
+                index = planes.indexOf(plane);
+            }
         }
 
-        return maxCruiseSpeed;
+        return planes.get(index);
     }
 
-    public static double getMaxRange(List<Aviation> planes) {
+    public static Aviation findMaxRangePlane(List<Aviation> planes) {
         double maxRange = 0;
+        int index = 0;
 
         for (Aviation plane : planes) {
-            maxRange = plane.getMaxRange() > maxRange ?
-                    plane.getMaxRange() : maxRange;
+            if (plane.getMaxRange() > maxRange) {
+                index = planes.indexOf(plane);
+            }
         }
 
-        return maxRange;
+        return planes.get(index);
     }
 
-    public static double getMaxFuelReserve(List<Aviation> planes) {
+    public static Aviation findMaxFuelReserve(List<Aviation> planes) {
         double maxFuelReserve = 0;
+        int index = 0;
 
         for (Aviation plane : planes) {
-            maxFuelReserve = plane.getFuelReserve() > maxFuelReserve ?
-                    plane.getFuelReserve() : maxFuelReserve;
+            if (plane.getCruiseSpeed() > maxFuelReserve) {
+                index = planes.indexOf(plane);
+            }
         }
 
-        return maxFuelReserve;
+        return planes.get(index);
     }
 
     public static List<Aviation> findByCruiseSpeed(List<Aviation> planes, double minSpeed, double maxSpeed) {
