@@ -4,10 +4,16 @@ public class PassengerPlane extends Aviation {
     private int seatsAmount;
 
     public PassengerPlane() {
+        super();
         seatsAmount = 0;
     }
 
+    public PassengerPlane(double cruiseSpeed, double maxRange) {
+        super(cruiseSpeed, maxRange);
+    }
+
     public PassengerPlane(int seatsAmount) {
+        super();
         this.seatsAmount = seatsAmount;
     }
 
@@ -21,7 +27,9 @@ public class PassengerPlane extends Aviation {
     }
 
     public void setSeatsAmount(int seatsAmount) {
-        this.seatsAmount = seatsAmount;
+        if (seatsAmount > 0) {
+            this.seatsAmount = seatsAmount;
+        }
     }
 
     @Override

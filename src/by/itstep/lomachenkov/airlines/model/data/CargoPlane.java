@@ -4,11 +4,17 @@ public class CargoPlane extends Aviation {
     private double liftingCapacity;
 
     public CargoPlane() {
+        super();
         liftingCapacity = 0d;
     }
 
     public CargoPlane(double liftingCapacity) {
+        super();
         this.liftingCapacity = liftingCapacity;
+    }
+
+    public CargoPlane(double cruiseSpeed, double maxRange) {
+        super(cruiseSpeed, maxRange);
     }
 
     public CargoPlane(String model, double cruiseSpeed, double maxRange, double fuelReserve, double liftingCapacity) {
@@ -21,7 +27,9 @@ public class CargoPlane extends Aviation {
     }
 
     public void setLiftingCapacity(double liftingCapacity) {
-        this.liftingCapacity = liftingCapacity;
+        if (liftingCapacity > 0) {
+            this.liftingCapacity = liftingCapacity;
+        }
     }
 
     @Override
