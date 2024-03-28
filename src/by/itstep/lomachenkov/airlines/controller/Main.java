@@ -1,6 +1,5 @@
 package by.itstep.lomachenkov.airlines.controller;
 
-import by.itstep.lomachenkov.airlines.model.comporators.MaxRangeComparator;
 import by.itstep.lomachenkov.airlines.model.data.Aviation;
 import by.itstep.lomachenkov.airlines.model.data.CargoPlane;
 import by.itstep.lomachenkov.airlines.model.data.PassengerPlane;

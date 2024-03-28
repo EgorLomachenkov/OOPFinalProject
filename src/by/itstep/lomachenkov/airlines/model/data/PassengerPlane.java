@@ -17,6 +17,11 @@ public class PassengerPlane extends Aviation {
         this.seatsAmount = seatsAmount;
     }
 
+    public PassengerPlane(int seatsAmount, double cruiseSpeed, double maxRange) {
+        super(cruiseSpeed, maxRange);
+        this.seatsAmount = seatsAmount;
+    }
+
     public PassengerPlane(String model, double cruiseSpeed, double maxRange, double fuelReserve, int seatsAmount) {
         super(model, cruiseSpeed, maxRange, fuelReserve);
         this.seatsAmount = seatsAmount;

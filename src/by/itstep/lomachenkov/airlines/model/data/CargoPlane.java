@@ -13,6 +13,11 @@ public class CargoPlane extends Aviation {
         this.liftingCapacity = liftingCapacity;
     }
 
+    public CargoPlane(double liftingCapacity, double cruiseSpeed, double maxRange) {
+        super(cruiseSpeed, maxRange);
+        this.liftingCapacity = liftingCapacity;
+    }
+
     public CargoPlane(double cruiseSpeed, double maxRange) {
         super(cruiseSpeed, maxRange);
     }

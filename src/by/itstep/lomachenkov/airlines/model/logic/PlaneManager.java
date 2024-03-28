@@ -5,7 +5,6 @@ import by.itstep.lomachenkov.airlines.model.data.CargoPlane;
 import by.itstep.lomachenkov.airlines.model.data.FighterPlane;
 import by.itstep.lomachenkov.airlines.model.data.PassengerPlane;
 
-import java.nio.channels.spi.AbstractInterruptibleChannel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -47,7 +46,9 @@ public class PlaneManager {
         int index = 0;
 
         for (Aviation plane : planes) {
-            if (plane.getCruiseSpeed() > maxCruiseSpeed) {
+            double planeSpeed = plane.getCruiseSpeed();
+            if (planeSpeed > maxCruiseSpeed) {
+                maxCruiseSpeed = planeSpeed;
                 index = planes.indexOf(plane);
             }
         }
@@ -60,7 +61,9 @@ public class PlaneManager {
         int index = 0;
 
         for (Aviation plane : planes) {
-            if (plane.getMaxRange() > maxRange) {
+            double planeRange = plane.getMaxRange();
+            if (planeRange > maxRange) {
+                maxRange = planeRange;
                 index = planes.indexOf(plane);
             }
         }
@@ -68,12 +71,14 @@ public class PlaneManager {
         return planes.get(index);
     }
 
-    public static Aviation findMaxFuelReserve(List<Aviation> planes) {
+    public static Aviation findMaxFuelReservePlane(List<Aviation> planes) {
         double maxFuelReserve = 0;
         int index = 0;
 
         for (Aviation plane : planes) {
-            if (plane.getCruiseSpeed() > maxFuelReserve) {
+            double planeFuelReserve = plane.getFuelReserve();
+            if (planeFuelReserve > maxFuelReserve) {
+                maxFuelReserve = planeFuelReserve;
                 index = planes.indexOf(plane);
             }
         }
